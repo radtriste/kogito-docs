@@ -1,12 +1,12 @@
 name: serverlessworkflow
-title: "Kogito Serverless Workflow"
-version: main
+title: Kogito Serverless Workflow
+version: 1.23.0.Final
 start_page: index.adoc
 nav:
-- "modules/ROOT/nav.adoc"
+- modules/ROOT/nav.adoc
 asciidoc:
   attributes:
-    quarkus_version: '2.9.1.Final'
+    quarkus_version: 2.9.1.Final
     java_min_version: 11+
     maven_min_version: 3.8.1
     graalvm_min_version: 22.0.0.2
