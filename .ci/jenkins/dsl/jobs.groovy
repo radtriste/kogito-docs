@@ -16,6 +16,11 @@ jenkins_path = '.ci/jenkins'
 
 setupPostReleaseJob()
 
+KogitoJobUtils.createQuarkusUpdateToolsJob(this, 'kogito-docs', [:], [:], [[
+    filepath: 'serverlessworkflow/antora.yaml',
+    regex: 'quarkus_version: ',
+]])
+
 /////////////////////////////////////////////////////////////////
 // Methods
 /////////////////////////////////////////////////////////////////
