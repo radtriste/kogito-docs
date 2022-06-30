@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="../../../_/css/search.css">
 <link rel="stylesheet" href="../../../_/css/menu.css">
 <link rel="stylesheet" href="../../../_/css/tabs.css">
-<link rel="stylesheet" href="../../../_/css/navbar.css"><script>var uiRootPath = '../../../_'</script>
+<link rel="stylesheet" href="../../../_/css/navbar.css">
+<link rel="stylesheet" href="../../../_/css/custom.css"><script>var uiRootPath = '../../../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -82,13 +83,10 @@
     <span class="nav-text">Service Orchestration</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../service-orchestration/orchestration-of-opnapi-based-services.html">Orchestration of OpenAPI based services</a>
+    <a class="nav-link" href="../service-orchestration/orchestration-of-openapi-based-services.html">Orchestrating the OpenAPI services</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../service-orchestration/configuring-openapi-services-endpoints.html">Configuring OpenAPI services endpoints in different environments</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../service-orchestration/orchestration-of-grpc-services.html">Orchestrating the gRPC based services</a>
+    <a class="nav-link" href="../service-orchestration/orchestration-of-grpc-services.html">Orchestration of gRPC based services</a>
   </li>
 </ul>
   </li>
@@ -215,7 +213,7 @@
 <p>Maven 3.8.1</p>
 </li>
 <li>
-<p><a href="https://quarkus.io/guides/cli-tooling">Quarkus CLI</a> 2.9.1.Final</p>
+<p><a href="https://quarkus.io/guides/cli-tooling">Quarkus CLI</a> 2.10.0.Final</p>
 </li>
 <li>
 <p>Visual Studio Code with <a href="https://marketplace.visualstudio.com/items?itemName=redhat.java">Red Hat Java Extension</a>
@@ -277,7 +275,7 @@ and <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-e
 <div class="listingblock">
 <div class="title">Create a project using Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">mvn io.quarkus.platform:quarkus-maven-plugin:2.9.1.Final:create \
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">mvn io.quarkus.platform:quarkus-maven-plugin:2.10.0.Final:create \
     -DprojectGroupId=org.kie.kogito.examples \
     -DprojectArtifactId=serverless-workflow-hello-world \
     -Dextensions="kogito-quarkus-serverless-workflow,quarkus-container-image-jib,quarkus-resteasy-jackson,quarkus-smallrye-openapi"
@@ -460,7 +458,7 @@ unique identifier.</td>
 [INFO] Building serverless-workflow-hello-world 1.0
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- quarkus-maven-plugin:2.9.1.Final:dev (default-cli) @ serverless-workflow-hello-world ---
+[INFO] --- quarkus-maven-plugin:2.10.0.Final:dev (default-cli) @ serverless-workflow-hello-world ---
 [INFO] Invoking org.apache.maven.plugins:maven-resources-plugin:2.6:resources) @ serverless-workflow-hello-world
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] Copying 3 resources
@@ -470,7 +468,7 @@ __  ____  __  _____   ___  __ ____  ______
  -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \
 --\___\_\____/_/ |_/_/|_/_/|_|\____/___/
 2022-05-25 14:38:09,741 INFO  [org.kie.kog.add.qua.mes.com.QuarkusKogitoExtensionInitializer] (Quarkus Main Thread) Registered Kogito CloudEvent extension
-2022-05-25 14:38:09,840 INFO  [io.quarkus] (Quarkus Main Thread) serverless-workflow-hello-world 1.0 on JVM (powered by Quarkus 2.9.1.Final) started in 6.470s. Listening on: http://localhost:8080
+2022-05-25 14:38:09,840 INFO  [io.quarkus] (Quarkus Main Thread) serverless-workflow-hello-world 1.0 on JVM (powered by Quarkus 2.10.0.Final) started in 6.470s. Listening on: http://localhost:8080
 2022-05-25 14:38:09,843 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
 2022-05-25 14:38:09,843 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cache, cdi, jackson-jq, kogito-addon-messaging-extension, kogito-processes, kogito-serverless-workflow, reactive-routes, rest-client, rest-client-jackson, resteasy, resteasy-jackson, smallrye-context-propagation, smallrye-openapi, smallrye-reactive-messaging, smallrye-reactive-messaging-http, swagger-ui, vertx]
 2022-05-25 14:38:12,877 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT: __  ____  __  _____   ___  __ ____  ______
@@ -582,7 +580,7 @@ __  ____  __  _____   ___  __ ____  ______
 <p><a href="getting-familiar-with-our-tooling.html" class="xref page">Getting Familiar With Our Tooling</a>.</p>
 </li>
 <li>
-<p><a href="../service-orchestration/orchestration-of-opnapi-based-services.html" class="xref page">Orchestration of OpenAPI Based Services</a>.</p>
+<p><a href="../service-orchestration/orchestration-of-openapi-based-services.html" class="xref page">Orchestration of OpenAPI Based Services</a>.</p>
 </li>
 </ul>
 </div>

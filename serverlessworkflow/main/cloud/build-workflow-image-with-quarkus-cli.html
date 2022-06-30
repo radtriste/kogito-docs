@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="../../../_/css/search.css">
 <link rel="stylesheet" href="../../../_/css/menu.css">
 <link rel="stylesheet" href="../../../_/css/tabs.css">
-<link rel="stylesheet" href="../../../_/css/navbar.css"><script>var uiRootPath = '../../../_'</script>
+<link rel="stylesheet" href="../../../_/css/navbar.css">
+<link rel="stylesheet" href="../../../_/css/custom.css"><script>var uiRootPath = '../../../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -84,13 +85,10 @@
     <span class="nav-text">Service Orchestration</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../service-orchestration/orchestration-of-opnapi-based-services.html">Orchestration of OpenAPI based services</a>
+    <a class="nav-link" href="../service-orchestration/orchestration-of-openapi-based-services.html">Orchestrating the OpenAPI services</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../service-orchestration/configuring-openapi-services-endpoints.html">Configuring OpenAPI services endpoints in different environments</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../service-orchestration/orchestration-of-grpc-services.html">Orchestrating the gRPC based services</a>
+    <a class="nav-link" href="../service-orchestration/orchestration-of-grpc-services.html">Orchestration of gRPC based services</a>
   </li>
 </ul>
   </li>
@@ -179,7 +177,7 @@
 <p>Your Serverless Workflow application is ready to be built. For more information about creating your Serverless Workflow application, see <a href="../getting-started/create-your-first-workflow-service.html" class="xref page">Creating your first Serverless Workflow service</a>.</p>
 </li>
 <li>
-<p><a href="https://quarkus.io/guides/cli-tooling">Quarkus CLI</a> 2.9.1.Final is installed.</p>
+<p><a href="https://quarkus.io/guides/cli-tooling">Quarkus CLI</a> 2.10.0.Final is installed.</p>
 </li>
 <li>
 <p>Java 11+ is installed.</p>
@@ -207,13 +205,13 @@
 <h2 id="_using_a_kogito_example_application"><a class="anchor" href="#_using_a_kogito_example_application"></a>Using a Kogito example application</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To get started with building Serverless Workflow images, you can use the <a href="https://github.com/kiegroup/kogito-examples/tree/stable/kogito-quarkus-examples/serverless-workflow-greeting-quarkus">serverless-workflow-greeting-quarkus</a> example application.</p>
+<p>To get started with building Serverless Workflow images, you can use the <a href="https://github.com/kiegroup/kogito-examples/tree/main/serverless-workflow-examples/serverless-workflow-greeting-quarkus">serverless-workflow-greeting-quarkus</a> example application.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>Quarkus 2.9.1.Final is installed.</p>
+<p>Quarkus 2.10.0.Final is installed.</p>
 </li>
 </ul>
 </div>
@@ -233,11 +231,11 @@ You can skip the following procedure, if you already have a Serverless Workflow 
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Clone the <a href="{kogito_examples_url}">kogito-examples</a> repository and navigate to the <a href="https://github.com/kiegroup/kogito-examples/tree/stable/kogito-quarkus-examples/serverless-workflow-greeting-quarkus">serverless-workflow-greeting-quarkus</a> example application.</p>
+<p>Clone the <a href="https://github.com/kiegroup/kogito-examples.git">kogito-examples</a> repository and navigate to the <a href="https://github.com/kiegroup/kogito-examples/tree/main/serverless-workflow-examples/serverless-workflow-greeting-quarkus">serverless-workflow-greeting-quarkus</a> example application.</p>
 <div class="listingblock">
 <div class="title">Clone a Kogito example application</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ git clone --branch stable {kogito_examples_url} &amp;&amp; cd kogito-examples/serverless-workflow-examples/serverless-workflow-greeting-quarkus</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ git clone --branch stable https://github.com/kiegroup/kogito-examples.git &amp;&amp; cd kogito-examples/serverless-workflow-examples/serverless-workflow-greeting-quarkus</code></pre>
 </div>
 </div>
 </li>
