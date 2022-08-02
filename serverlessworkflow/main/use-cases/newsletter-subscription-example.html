@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: Kogito Serverless Workflow Guides</title>
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">
+
 <link rel="stylesheet" href="../../../_/css/search.css">
 <link rel="stylesheet" href="../../../_/css/menu.css">
 <link rel="stylesheet" href="../../../_/css/tabs.css">
@@ -63,7 +65,7 @@
     <span class="nav-text">Getting Started</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../getting-started/create-your-first-workflow-service.html">Create your first workflow service</a>
+    <a class="nav-link" href="../getting-started/create-your-first-workflow-service.html">Creating your first Serverless Workflow service</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/cncf-serverless-workflow-specification-support.html">CNCF Serverless Workflow specification</a>
@@ -75,7 +77,16 @@
     <span class="nav-text">Core</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/understanding-jq-expressions.html">jq expressions in Serverless Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../core/understanding-workflow-error-handling.html">Error handling in Serverless Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/working-with-parallelism.html">Parallelism in Serverless Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/configuration-properties.html">Configuration properties in Serverless Workflow</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../core/custom-functions-support.html">Custom functions for your Serverless Workflow service</a>
@@ -110,6 +121,9 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tooling/kn-plugin-workflow-overview.html">Serverless Workflow plug-in for Knative CLI</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -120,7 +134,22 @@
     <a class="nav-link" href="../service-orchestration/orchestration-of-openapi-based-services.html">Orchestrating the OpenAPI services</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../service-orchestration/configuring-openapi-services-endpoints.html">Configuring OpenAPI services endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../service-orchestration/orchestration-of-grpc-services.html">Orchestration of gRPC based services</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Eventing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eventing/consume-producing-events-with-kafka.html">Consuming and producing events using Apache Kafka</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eventing/working-with-callbacks.html">Callbacks in Serverless Workflow</a>
   </li>
 </ul>
   </li>
@@ -131,6 +160,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../security/authention-support-for-openapi-services.html">Authentication for OpenAPI services in Serverless Workflow</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/orchestrating-third-party-services-with-oauth2.html">Orchestration of third-party services using OAuth 2.0 authentication in Serverless Workflow</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -138,7 +170,25 @@
     <span class="nav-text">Testing and Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../testing-and-troubleshooting/mocking-http-cloudevents-with-wiremock.html">Mocking HTTP CloudEvents sink using WireMock</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../testing-and-troubleshooting/mocking-openapi-services-with-wiremock.html">Mocking OpenAPI services using WireMock</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../testing-and-troubleshooting/basic-integration-tests-with-restassured.html">Testing your Serverless Workflow application using REST Assured</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../testing-and-troubleshooting/integration-tests-with-postgresql.html">Serverless Workflow integration test using PostgreSQL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Persistence</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../persistence/persistence-with-postgresql.html">Running a Serverless Workflow service using PostgreSQL</a>
   </li>
 </ul>
   </li>
@@ -148,6 +198,27 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../cloud/build-workflow-image-with-quarkus-cli.html">Building Serverless Workflow Images using Quarkus CLI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cloud/deploying-on-minikube.html">Deploying your Serverless Workflow application on Minikube</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Integrations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../integrations/serverless-dashboard-with-runtime-data.html">Displaying Serverless Workflow data in dashboards</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Use Cases</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="orchestration-based-saga-pattern.html">Saga orchestration example in Serverless Workflow</a>
   </li>
 </ul>
   </li>
