@@ -70,6 +70,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/cncf-serverless-workflow-specification-support.html">CNCF Serverless Workflow specification</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/getting-familiar-with-our-tooling.html">Getting familiar with our tooling</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -98,16 +101,13 @@
     <span class="nav-text">Tooling</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../tooling/serverless-workflow-editor/swf-editor-overview.html">Serverless Workflow editor</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-workflow-editor/swf-editor-chrome-extension.html">Chrome GitHub extension for Serverless Workflow editor</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../tooling/serverless-workflow-editor/swf-editor-vscode-extension.html">VS Code extension for Serverless Workflow editor</a>
   </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tooling/serverless-workflow-editor/swf-editor-chrome-extension.html">Chrome GitHub extension for Serverless Workflow editor</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -145,6 +145,9 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Eventing</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eventing/handling-events-on-workflows.html">Handling events on workflows</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../eventing/consume-producing-events-with-kafka.html">Consuming and producing events using Apache Kafka</a>
   </li>
@@ -307,7 +310,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>The further sections describes how an end-to-end solution is created in the <code>serverless-workflow-oauth2-orchestration-quarkus</code> example application. To see the source code of <code>serverless-workflow-oauth2-orchestration-quarkus</code> example application, you can clone the <a href="https://github.com/kiegroup/kogito-examples"><code>kogito-examples</code></a> repository in GitHub and select the <code>serverless-workflow-examples/serverless-workflow-oauth2-orchestration-quarkus</code> directory.</p>
+<p>The further sections describes how an end-to-end solution is created in the <code>serverless-workflow-oauth2-orchestration-quarkus</code> example application. To see the source code of <code>serverless-workflow-oauth2-orchestration-quarkus</code> example application, you can clone the <a href="https://github.com/kiegroup/kogito-examples">kogito-examples</a> repository in GitHub and select the <code>serverless-workflow-examples/serverless-workflow-oauth2-orchestration-quarkus</code> directory.</p>
 </div>
 <div class="paragraph">
 <p>The <code>serverless-workflow-oauth2-orchestration-quarkus</code> example application contains the following services to compose the solution:</p>
@@ -627,6 +630,8 @@
 <div class="title">Example <code>ExchangeWorkflowHelper.java</code> file</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.kie.kogito.examples;
+
+import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class ExchangeWorkflowHelper {
@@ -1034,7 +1039,7 @@ java -jar target/quarkus-app/quarkus-run.jar</code></pre>
 </div>
 </li>
 <li>
-<p>In a separate command terminal window, navigate to the <code>currency-exchange-workflow</code> directory and start the Quarkus application of currecy exchange workflow:</p>
+<p>In a separate command terminal window, navigate to the <code>currency-exchange-workflow</code> directory and start the Quarkus application of currency exchange workflow:</p>
 <div class="openblock">
 <div class="content">
 <div class="listingblock">
