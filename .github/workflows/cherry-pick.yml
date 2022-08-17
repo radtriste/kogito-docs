@@ -9,7 +9,7 @@ on:
     - "closed"
 
 env:
-  LABEL_PREFIX: 'cp-branch-'
+  LABEL_PREFIX: 'backport-'
 
 jobs:
   fetch_labels:
