@@ -1,25 +1,91 @@
 on:
-  # pull_request_target: # TODO set back
+  # pull_request_target: # TODO to set back
   pull_request:
     branches:
-      - main 
+      - main
       - test_cherry-pick # TODO to remove
-    # types: ["closed"]
+    types:
+    - "labeled"
+    - "closed"
+
+env:
+  LABEL_PREFIX: 'cp-branch-'
 
 jobs:
-  cherry_pick_release_v1_0:
+  fetch_labels:
     runs-on: ubuntu-latest
-    name: Cherry pick issue
+    outputs:
+      labels: ${{ steps.set-labels.outputs.labels }}
+    env:
+      LABELS: ${{ toJSON(github.event.pull_request.labels) }}
     steps:
+      - name: Retrieve labels
+        id: set-labels
+        run: |
+          printf '%s\n' "${LABELS}" > labels.json
+          echo "Labels retrieved below"
+          cat labels.json
+
+          included_labels="$(cat labels.json | jq -c 'map(select(.name | startswith("${{ env.LABEL_PREFIX }}")))')"
+          included_labels_size="$(echo "${included_labels}" | jq '. | length')"
+          echo "included_labels = ${included_labels}"
+          echo "included_labels_size = ${included_labels_size}"
+          echo "INCLUDED_LABELS_SIZE=${included_labels_size}" >> $GITHUB_ENV
+
+          echo ::set-output name=labels::{\"include\":$(echo ${included_labels})}
+          echo ::set-output name=labels_size::$(echo ${included_labels_size})
+      
+      - name: debug
+        run: |
+          echo "Included labels = ${{ steps.set-labels.outputs.labels }}"
+          echo "Length = ${{ steps.set-labels.outputs.labels_size }}"
+          echo "labels not empty ? = ${{ steps.set-labels.outputs.labels_size > 0 }}"
+      
+      - name: Opened PR => Check commits number
+        if: ${{ github.event.pull_request.state != 'closed' && github.event.pull_request.commits > 1 && steps.set-labels.outputs.labels_size > 0 }}
+        uses: jungwinter/comment@v1
+        with:
+          type: create
+          body: "You specified cherry-pick labels but no squash is done on this PR, thus it will not be cherry-picked.\nDo not forget to squash before merging !"
+          issue_number: ${{ github.event.pull_request.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Closed PR => Check commits number
+        if: ${{ github.event.pull_request.state == 'closed' && github.event.pull_request.commits > 1 && steps.set-labels.outputs.labels_size > 0 }}
+        uses: jungwinter/comment@v1
+        with:
+          type: create
+          body: "No squash was done on this PR, thus it cannot be cherry-picked !"
+          issue_number: ${{ github.event.pull_request.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+  cherry_pick_release_branch_labels:
+    runs-on: ubuntu-latest
+    needs: fetch_labels
+    if: ${{ github.event.pull_request.state == 'closed' }}
+    strategy:
+      matrix: ${{ fromJSON(needs.fetch_labels.outputs.labels) }}
+      fail-fast: true
+    name: Cherry pick for ${{ matrix.name }}
+    steps:
+      - name: Calculate release branch
+        run: |
+          label=${{ matrix.name }}
+          echo "RELEASE_BRANCH=${label#${{ env.LABEL_PREFIX }}}" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Cherry pick into release-v1.0
-        uses: carloscastrojumo/github-cherry-pick-action@v1.0.2
+      - name: Perform cherry-pick
+        # uses: carloscastrojumo/github-cherry-pick-action@v1.0.2
+        uses: radtriste/github-cherry-pick-action@issue_9
         with:
-          branch: release-v1.0
+          branch: "${{ env.RELEASE_BRANCH }}"
+          title: "[${{ env.RELEASE_BRANCH }}] ${{ github.event.pull_request.title }}"
+          body: "cherry-pick: ${{ github.event.pull_request.html_url }}"
           labels: |
             cherry-pick
           reviewers: |
-            aReviewerUser
+            radtriste
+            ${{ github.event.pull_request.user.login }}
+  
