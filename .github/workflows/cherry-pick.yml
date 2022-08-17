@@ -29,18 +29,21 @@ jobs:
           echo "Labels retrieved below"
           cat labels.json
 
+          echo 'hello'
+
           included_labels="$(cat labels.json | jq -c 'map(select(.name | startswith("${{ env.LABEL_PREFIX }}")))')"
           included_labels_size="$(echo "${included_labels}" | jq '. | length')"
           echo "included_labels = ${included_labels}"
           echo "included_labels_size = ${included_labels_size}"
 
+          echo 'bonjour'
           echo ::set-output name=labels::{\"include\":$(echo ${included_labels})}
           echo ::set-output name=labels_size::$(echo ${included_labels_size})
       
       - name: Check PR status
         id: check-status
         run: |
-          echo ::set-output name=disable_cherry_pick::${{ github.event.pull_request.commits > 1 && steps.set-labels.outputs.labels_size > 0 }}
+          echo ::set-output name=disable_cherry_pick::false
       
       - name: Opened PR => Check commits number
         if: ${{ github.event.pull_request.state != 'closed' && steps.check-status.outputs.disable_cherry_pick == 'true' }}
