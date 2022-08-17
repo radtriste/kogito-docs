@@ -10,6 +10,7 @@ on:
 
 env:
   LABEL_PREFIX: 'backport-'
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   fetch_labels:
