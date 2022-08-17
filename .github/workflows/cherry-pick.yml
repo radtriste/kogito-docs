@@ -80,7 +80,7 @@ jobs:
           body: "cherry-pick: ${{ github.event.pull_request.html_url }}"
           labels: |
             cherry-pick
-          inherit_labels: false
+          # inherit_labels: false
           reviewers: |
             radtriste
             ${{ github.event.pull_request.user.login }}
