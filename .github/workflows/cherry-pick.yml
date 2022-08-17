@@ -35,12 +35,6 @@ jobs:
           echo ::set-output name=labels::{\"include\":$(echo ${included_labels})}
           echo ::set-output name=labels_size::$(echo ${included_labels_size})
       
-      - name: debug
-        run: |
-          echo "Included labels = ${{ steps.set-labels.outputs.labels }}"
-          echo "Length = ${{ steps.set-labels.outputs.labels_size }}"
-          echo "labels not empty ? = ${{ steps.set-labels.outputs.labels_size > 0 }}"
-      
       - name: Opened PR => Check commits number
         if: ${{ github.event.pull_request.state != 'closed' && github.event.pull_request.commits > 1 && steps.set-labels.outputs.labels_size > 0 }}
         uses: jungwinter/comment@v1
@@ -77,6 +71,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Perform cherry-pick
+        # Should be set back once https://github.com/carloscastrojumo/github-cherry-pick-action/pull/10 is merged and released
         # uses: carloscastrojumo/github-cherry-pick-action@v1.0.2
         uses: radtriste/github-cherry-pick-action@issue_9
         with:
@@ -85,6 +80,7 @@ jobs:
           body: "cherry-pick: ${{ github.event.pull_request.html_url }}"
           labels: |
             cherry-pick
+          inherit_labels: false
           reviewers: |
             radtriste
             ${{ github.event.pull_request.user.login }}
