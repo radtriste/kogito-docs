@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       labels: ${{ steps.set-labels.outputs.labels }}
+      labels_size: ${{ steps.set-labels.outputs.labels_size }}
+      disable_cherry_pick: ${{ steps.check-status.outputs.disable_cherry_pick }}
     env:
       LABELS: ${{ toJSON(github.event.pull_request.labels) }}
     steps:
@@ -35,8 +37,13 @@ jobs:
           echo ::set-output name=labels::{\"include\":$(echo ${included_labels})}
           echo ::set-output name=labels_size::$(echo ${included_labels_size})
       
+      - name: Check PR status
+        id: check-status
+        run: |
+          echo ::set-output name=disable_cherry_pick::${{ github.event.pull_request.commits > 1 && steps.set-labels.outputs.labels_size > 0 }}
+      
       - name: Opened PR => Check commits number
-        if: ${{ github.event.pull_request.state != 'closed' && github.event.pull_request.commits > 1 && steps.set-labels.outputs.labels_size > 0 }}
+        if: ${{ github.event.pull_request.state != 'closed' && steps.check-status.outputs.disable_cherry_pick == 'true' }}
         uses: jungwinter/comment@v1
         with:
           type: create
@@ -45,7 +52,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Closed PR => Check commits number
-        if: ${{ github.event.pull_request.state == 'closed' && github.event.pull_request.commits > 1 && steps.set-labels.outputs.labels_size > 0 }}
+        if: ${{ github.event.pull_request.state == 'closed' && steps.check-status.outputs.disable_cherry_pick == 'true' }}
         uses: jungwinter/comment@v1
         with:
           type: create
@@ -56,7 +63,7 @@ jobs:
   cherry_pick_release_branch_labels:
     runs-on: ubuntu-latest
     needs: fetch_labels
-    if: ${{ github.event.pull_request.state == 'closed' }}
+    if: ${{ github.event.pull_request.state == 'closed' && github.event.pull_request.merged && needs.fetch_labels.outputs.disable_cherry_pick != 'true' }}
     strategy:
       matrix: ${{ fromJSON(needs.fetch_labels.outputs.labels) }}
       fail-fast: true
