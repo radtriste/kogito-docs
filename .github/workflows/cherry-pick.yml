@@ -29,6 +29,8 @@ jobs:
           echo "Labels retrieved below"
           cat labels.json
 
+          echo 'hello'
+
           included_labels="$(cat labels.json | jq -c 'map(select(.name | startswith("${{ env.LABEL_PREFIX }}")))')"
           included_labels_size="$(echo "${included_labels}" | jq '. | length')"
           echo "included_labels = ${included_labels}"
