@@ -31,7 +31,6 @@ jobs:
           included_labels_size="$(echo "${included_labels}" | jq '. | length')"
           echo "included_labels = ${included_labels}"
           echo "included_labels_size = ${included_labels_size}"
-          echo "INCLUDED_LABELS_SIZE=${included_labels_size}" >> $GITHUB_ENV
 
           echo ::set-output name=labels::{\"include\":$(echo ${included_labels})}
           echo ::set-output name=labels_size::$(echo ${included_labels_size})
