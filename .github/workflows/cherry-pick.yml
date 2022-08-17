@@ -43,7 +43,7 @@ jobs:
       - name: Check PR status
         id: check-status
         run: |
-          echo ::set-output name=disable_cherry_pick::${{ github.event.pull_request.commits > 1 && steps.set-labels.outputs.labels_size > 0 }}
+          echo ::set-output name=disable_cherry_pick::false
       
       - name: Opened PR => Check commits number
         if: ${{ github.event.pull_request.state != 'closed' && steps.check-status.outputs.disable_cherry_pick == 'true' }}
