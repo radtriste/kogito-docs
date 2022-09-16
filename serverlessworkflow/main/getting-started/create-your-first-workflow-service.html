@@ -135,19 +135,19 @@
     <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-overview.html">Serverless Logic Web Tools</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-github-integration.html">GitHub integration</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-github-integration.html">Integrating your Serverless Workflow project in GitHub using Serverless Logic Web Tools</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-openshift-integration.html">OpenShift integration</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-openshift-integration.html">Integrating your Serverless Workflow project with OpenShift using Serverless Logic Web Tools</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-redhat-application-services-integration.html">Red Hat OpenShift Application and Data Services integration</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-redhat-application-services-integration.html">Integrating with Red Hat OpenShift Application and Data Services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-deploy-projects.html">Deploying projects</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-deploy-projects.html">Deploying your Serverless Workflow projects using Serverless Logic Web Tools</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-enable-kogito-swf-visualization.html">Kogito Serverless Workflow Visualization</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-enable-kogito-swf-visualization.html">Enabling Kogito Serverless Workflow Visualization in Serverless Logic Web Tools</a>
   </li>
 </ul>
   </li>
@@ -238,12 +238,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../cloud/deploying-on-minikube.html">Deploying your Serverless Workflow application on Minikube</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cloud/kubernetes-service-discovery.html">Kubernetes service discovery in Serverless Workflow</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Integrations</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../integrations/expose-metrics-to-prometheus.html">Exposing the workflow base metrics to Prometheus</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../integrations/serverless-dashboard-with-runtime-data.html">Displaying workflow data in dashboards</a>
   </li>
@@ -275,11 +281,11 @@
         <li class="version is-current">
           <a href="../index.html">snapshot</a>
         </li>
-        <li class="version">
-          <a href="../../1.27.0-SNAPSHOT/index.html">1.27-RC</a>
-        </li>
         <li class="version is-latest">
-          <a href="../../latest/index.html">1.26</a>
+          <a href="../../latest/index.html">1.27</a>
+        </li>
+        <li class="version">
+          <a href="../../1.26.0.Final/index.html">1.26</a>
         </li>
         <li class="version">
           <a href="../../1.25.0.Final/index.html">1.25</a>
@@ -309,8 +315,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="create-your-first-workflow-service.html">snapshot</a>
-    <a class="version" href="../../1.27.0-SNAPSHOT/getting-started/create-your-first-workflow-service.html">1.27-RC</a>
-    <a class="version" href="../../latest/getting-started/create-your-first-workflow-service.html">1.26</a>
+    <a class="version" href="../../latest/getting-started/create-your-first-workflow-service.html">1.27</a>
+    <a class="version" href="../../1.26.0.Final/getting-started/create-your-first-workflow-service.html">1.26</a>
     <a class="version" href="../../1.25.0.Final/getting-started/create-your-first-workflow-service.html">1.25</a>
     <a class="version" href="../../1.24.1.Final/getting-started/create-your-first-workflow-service.html">1.24</a>
   </div>
@@ -458,7 +464,7 @@ and <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-e
 <div class="listingblock">
 <div class="title">Create a project using Apache Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">mvn io.quarkus.platform:quarkus-maven-plugin:2.12.0.Final:create \
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">mvn io.quarkus.platform:quarkus-maven-plugin:2.12.2.Final:create \
     -DprojectGroupId=org.kie.kogito.examples \
     -DprojectArtifactId=serverless-workflow-hello-world \
     -Dextensions="kogito-quarkus-serverless-workflow,quarkus-container-image-jib,quarkus-resteasy-jackson,quarkus-smallrye-openapi" \
@@ -478,7 +484,7 @@ cd serverless-workflow-hello-world</code></pre>
   --name serverless-workflow-hello-world \
   --extension quarkus-jsonp,quarkus-smallrye-openapi \
   --quarkus-platform-group-id=io.quarkus.platform \
-  --quarkus-version=2.12.0.Final</code></pre>
+  --quarkus-version=2.12.2.Final</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -745,7 +751,7 @@ cd serverless-workflow-hello-world</code></pre>
 [INFO] Building serverless-workflow-hello-world 1.0
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- quarkus-maven-plugin:2.12.0.Final:dev (default-cli) @ serverless-workflow-hello-world ---
+[INFO] --- quarkus-maven-plugin:2.12.2.Final:dev (default-cli) @ serverless-workflow-hello-world ---
 [INFO] Invoking org.apache.maven.plugins:maven-resources-plugin:2.6:resources) @ serverless-workflow-hello-world
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] Copying 3 resources
@@ -755,7 +761,7 @@ __  ____  __  _____   ___  __ ____  ______
  -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \
 --\___\_\____/_/ |_/_/|_/_/|_|\____/___/
 2022-05-25 14:38:09,741 INFO  [org.kie.kog.add.qua.mes.com.QuarkusKogitoExtensionInitializer] (Quarkus Main Thread) Registered Kogito CloudEvent extension
-2022-05-25 14:38:09,840 INFO  [io.quarkus] (Quarkus Main Thread) serverless-workflow-hello-world 1.0 on JVM (powered by Quarkus 2.12.0.Final) started in 6.470s. Listening on: http://localhost:8080
+2022-05-25 14:38:09,840 INFO  [io.quarkus] (Quarkus Main Thread) serverless-workflow-hello-world 1.0 on JVM (powered by Quarkus 2.12.2.Final) started in 6.470s. Listening on: http://localhost:8080
 2022-05-25 14:38:09,843 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
 2022-05-25 14:38:09,843 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cache, cdi, jackson-jq, kogito-addon-messaging-extension, kogito-processes, kogito-serverless-workflow, reactive-routes, rest-client, rest-client-jackson, resteasy, resteasy-jackson, smallrye-context-propagation, smallrye-openapi, smallrye-reactive-messaging, smallrye-reactive-messaging-http, swagger-ui, vertx]
 2022-05-25 14:38:12,877 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT: __  ____  __  _____   ___  __ ____  ______

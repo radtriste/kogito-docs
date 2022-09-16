@@ -137,19 +137,19 @@
     <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-overview.html">Serverless Logic Web Tools</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-github-integration.html">GitHub integration</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-github-integration.html">Integrating your Serverless Workflow project in GitHub using Serverless Logic Web Tools</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-openshift-integration.html">OpenShift integration</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-openshift-integration.html">Integrating your Serverless Workflow project with OpenShift using Serverless Logic Web Tools</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-redhat-application-services-integration.html">Red Hat OpenShift Application and Data Services integration</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-redhat-application-services-integration.html">Integrating with Red Hat OpenShift Application and Data Services</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-deploy-projects.html">Deploying projects</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-deploy-projects.html">Deploying your Serverless Workflow projects using Serverless Logic Web Tools</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-enable-kogito-swf-visualization.html">Kogito Serverless Workflow Visualization</a>
+    <a class="nav-link" href="../tooling/serverless-logic-web-tools/serverless-logic-web-tools-enable-kogito-swf-visualization.html">Enabling Kogito Serverless Workflow Visualization in Serverless Logic Web Tools</a>
   </li>
 </ul>
   </li>
@@ -240,12 +240,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../cloud/deploying-on-minikube.html">Deploying your Serverless Workflow application on Minikube</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cloud/kubernetes-service-discovery.html">Kubernetes service discovery in Serverless Workflow</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Integrations</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../integrations/expose-metrics-to-prometheus.html">Exposing the workflow base metrics to Prometheus</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../integrations/serverless-dashboard-with-runtime-data.html">Displaying workflow data in dashboards</a>
   </li>
@@ -277,11 +283,11 @@
         <li class="version is-current">
           <a href="../index.html">snapshot</a>
         </li>
-        <li class="version">
-          <a href="../../1.27.0-SNAPSHOT/index.html">1.27-RC</a>
-        </li>
         <li class="version is-latest">
-          <a href="../../latest/index.html">1.26</a>
+          <a href="../../latest/index.html">1.27</a>
+        </li>
+        <li class="version">
+          <a href="../../1.26.0.Final/index.html">1.26</a>
         </li>
         <li class="version">
           <a href="../../1.25.0.Final/index.html">1.25</a>
@@ -311,8 +317,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="orchestration-of-grpc-services.html">snapshot</a>
-    <a class="version" href="../../1.27.0-SNAPSHOT/service-orchestration/orchestration-of-grpc-services.html">1.27-RC</a>
-    <a class="version" href="../../latest/service-orchestration/orchestration-of-grpc-services.html">1.26</a>
+    <a class="version" href="../../latest/service-orchestration/orchestration-of-grpc-services.html">1.27</a>
+    <a class="version" href="../../1.26.0.Final/service-orchestration/orchestration-of-grpc-services.html">1.26</a>
     <a class="version" href="../../1.25.0.Final/service-orchestration/orchestration-of-grpc-services.html">1.25</a>
     <a class="version" href="../../1.24.1.Final/service-orchestration/orchestration-of-grpc-services.html">1.24</a>
   </div>
@@ -530,11 +536,13 @@ quarkus.grpc.clients.Greeter.port=50051</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_default_enum_values"><a class="anchor" href="#_default_enum_values"></a>Default enum values</h3>
+<div class="sect1">
+<h2 id="_default_enum_values"><a class="anchor" href="#_default_enum_values"></a>Default enum values</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>gRPC <a href="{grpc_enum_url}">specification</a> requires enumeration types to have a default value. The default value is not included in the server response payload. Therefore, use an empty value such as <code>UNKNOWN</code> as default.
+<p>gRPC <a href="https://developers.google.com/protocol-buffers/docs/proto3#enum">specification</a> requires enumeration types to have a default value. The default value is not included in the server response payload. Therefore, use an empty value such as <code>UNKNOWN</code> as default.
 If, for any reason, your default value is semantically valid and you want the value to be included in the workflow model, you must set <code>kogito.grpc.enum.includeDefault</code> property to true. This way enumeration fields are always filled by the workflow if the server response does not include them.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
