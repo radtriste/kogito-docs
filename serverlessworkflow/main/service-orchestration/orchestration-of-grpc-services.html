@@ -286,6 +286,9 @@
         <li class="version is-current">
           <a href="../index.html">snapshot</a>
         </li>
+        <li class="version">
+          <a href="../../1.29.0-SNAPSHOT/index.html">1.29-RC</a>
+        </li>
         <li class="version is-latest">
           <a href="../../latest/index.html">1.28</a>
         </li>
@@ -323,6 +326,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="orchestration-of-grpc-services.html">snapshot</a>
+    <a class="version" href="../../1.29.0-SNAPSHOT/service-orchestration/orchestration-of-grpc-services.html">1.29-RC</a>
     <a class="version" href="../../latest/service-orchestration/orchestration-of-grpc-services.html">1.28</a>
     <a class="version" href="../../1.27.0.Final/service-orchestration/orchestration-of-grpc-services.html">1.27</a>
     <a class="version" href="../../1.26.0.Final/service-orchestration/orchestration-of-grpc-services.html">1.26</a>
@@ -566,7 +570,7 @@ If, for any reason, your default value is semantically valid and you want the va
 </div>
 </li>
 <li>
-<p>Now you need to run the workflow application</p>
+<p>Once the server is running, you must navigate to the <code>serverless-workflow-greeting-client-rpc-quarkus</code> directory in a separate command terminal and run the workflow application by entering the following command:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">mvn clean quarkus:dev</code></pre>
@@ -574,7 +578,7 @@ If, for any reason, your default value is semantically valid and you want the va
 </div>
 </li>
 <li>
-<p>Once the workflow application is started, you can invoke the workflow instance using any http client, such as <code>curl</code></p>
+<p>Once the workflow application is started, you can invoke the workflow instance using any HTTP client, such as <code>curl</code>, from a separate command terminal.</p>
 </li>
 </ol>
 </div>
