@@ -287,10 +287,13 @@
           <a href="../index.html">snapshot</a>
         </li>
         <li class="version">
-          <a href="../../1.30.0-SNAPSHOT/index.html">1.30-RC</a>
+          <a href="../../1.31.0-SNAPSHOT/index.html">1.31-RC</a>
         </li>
         <li class="version is-latest">
-          <a href="../../latest/index.html">1.29</a>
+          <a href="../../latest/index.html">1.30</a>
+        </li>
+        <li class="version">
+          <a href="../../1.29.0.Final/index.html">1.29</a>
         </li>
         <li class="version">
           <a href="../../1.28.0.Final/index.html">1.28</a>
@@ -329,8 +332,9 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="cncf-serverless-workflow-specification-support.html">snapshot</a>
-    <a class="version" href="../../1.30.0-SNAPSHOT/getting-started/cncf-serverless-workflow-specification-support.html">1.30-RC</a>
-    <a class="version" href="../../latest/getting-started/cncf-serverless-workflow-specification-support.html">1.29</a>
+    <a class="version" href="../../1.31.0-SNAPSHOT/getting-started/cncf-serverless-workflow-specification-support.html">1.31-RC</a>
+    <a class="version" href="../../latest/getting-started/cncf-serverless-workflow-specification-support.html">1.30</a>
+    <a class="version" href="../../1.29.0.Final/getting-started/cncf-serverless-workflow-specification-support.html">1.29</a>
     <a class="version" href="../../1.28.0.Final/getting-started/cncf-serverless-workflow-specification-support.html">1.28</a>
     <a class="version" href="../../1.27.0.Final/getting-started/cncf-serverless-workflow-specification-support.html">1.27</a>
     <a class="version" href="../../1.26.0.Final/getting-started/cncf-serverless-workflow-specification-support.html">1.26</a>
@@ -713,8 +717,13 @@ specification.</p>
 <h2 id="timeouts"><a class="anchor" href="#timeouts"></a>Timeouts</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Kogito has limited support for the Timeouts feature, which covers only <strong>Callback</strong> and <strong>Switch</strong> states with events.
-Other states will be included in future releases.</p>
+<p>Kogito has limited support for the timeouts feature, which covers only <strong>Callback</strong>, <strong>Switch</strong>, and <strong>Event</strong> states.</p>
+</div>
+<div class="paragraph">
+<p>For start event state the <code>exclusive</code> property is not supported if set to <code>false</code>, therefore the timeout is not supported for the event state when starting a workflow.</p>
+</div>
+<div class="paragraph">
+<p>Other states will be included in future releases.</p>
 </div>
 <div class="paragraph">
 <p>For more information about timeouts, see <a href="../core/timeouts-support.html" class="xref page">Timeouts on events for Serverless Workflow</a>.</p>
