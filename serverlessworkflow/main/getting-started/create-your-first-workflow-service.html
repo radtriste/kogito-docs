@@ -190,6 +190,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../eventing/working-with-callbacks.html">Callback state in Serverless Workflow</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../eventing/working-with-openapi-callbacks.html">OpenAPI Callback in Serverless Workflow</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -229,6 +232,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../persistence/persistence-with-postgresql.html">Running a workflow service using PostgreSQL</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../persistence/postgresql-flyway-migration.html">Migrate your PostgreSQL database</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -246,6 +252,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../cloud/kubernetes-service-discovery.html">Kubernetes service discovery in Serverless Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cloud/build-and-deploy-with-serverless-operator-on-kubernetes.html">Buiding and deploying a  Serverless Workflow application on Kubernetes using the Kogito Serverless Operator</a>
   </li>
 </ul>
   </li>
@@ -291,7 +300,10 @@
           <a href="../index.html">snapshot</a>
         </li>
         <li class="version is-latest">
-          <a href="../../latest/index.html">1.32</a>
+          <a href="../../latest/index.html">1.33</a>
+        </li>
+        <li class="version">
+          <a href="../../1.32.0.Final/index.html">1.32</a>
         </li>
         <li class="version">
           <a href="../../1.31.1.Final/index.html">1.31</a>
@@ -339,7 +351,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="create-your-first-workflow-service.html">snapshot</a>
-    <a class="version" href="../../latest/getting-started/create-your-first-workflow-service.html">1.32</a>
+    <a class="version" href="../../latest/getting-started/create-your-first-workflow-service.html">1.33</a>
+    <a class="version" href="../../1.32.0.Final/getting-started/create-your-first-workflow-service.html">1.32</a>
     <a class="version" href="../../1.31.1.Final/getting-started/create-your-first-workflow-service.html">1.31</a>
     <a class="version" href="../../1.30.0.Final/getting-started/create-your-first-workflow-service.html">1.30</a>
     <a class="version" href="../../1.29.0.Final/getting-started/create-your-first-workflow-service.html">1.29</a>
@@ -456,7 +469,6 @@ and <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-e
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">quarkus create app \
     -x=kogito-quarkus-serverless-workflow \
-    -x=quarkus-container-image-jib \
     -x=quarkus-resteasy-jackson \
     -x=quarkus-smallrye-openapi \
     --no-code \
@@ -470,9 +482,6 @@ and <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-e
 <ul>
 <li>
 <p><code>kogito-quarkus-serverless-workflow</code>: Adds support for workflows.</p>
-</li>
-<li>
-<p><code>quarkus-container-image-jib</code>: Adds support for Container Image Builds.</p>
 </li>
 <li>
 <p><code>quarkus-resteasy-jackson</code>: Adds support for RESTEasy, which is required by the generated REST resources that are used to start the flow process using an HTTP request.</p>
@@ -493,10 +502,10 @@ and <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-e
 <div class="listingblock">
 <div class="title">Create a project using Apache Maven</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">mvn io.quarkus.platform:quarkus-maven-plugin:2.15.0.Final:create \
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">mvn io.quarkus.platform:quarkus-maven-plugin:2.16.0.Final:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=serverless-workflow-hello-world \
-    -Dextensions="kogito-quarkus-serverless-workflow,quarkus-container-image-jib,quarkus-resteasy-jackson,quarkus-smallrye-openapi" \
+    -Dextensions="kogito-quarkus-serverless-workflow,quarkus-resteasy-jackson,quarkus-smallrye-openapi" \
     -DnoCode
 cd serverless-workflow-hello-world</code></pre>
 </div>
@@ -513,7 +522,7 @@ cd serverless-workflow-hello-world</code></pre>
   --name serverless-workflow-hello-world \
   --extension quarkus-jsonp,quarkus-smallrye-openapi \
   --quarkus-platform-group-id=io.quarkus.platform \
-  --quarkus-version=2.15.0.Final</code></pre>
+  --quarkus-version=2.16.0.Final</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -780,7 +789,7 @@ cd serverless-workflow-hello-world</code></pre>
 [INFO] Building serverless-workflow-hello-world 1.0.0-SNAPSHOT
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- quarkus-maven-plugin:2.15.0.Final:dev (default-cli) @ serverless-workflow-hello-world ---
+[INFO] --- quarkus-maven-plugin:2.16.0.Final:dev (default-cli) @ serverless-workflow-hello-world ---
 [INFO] Invoking org.apache.maven.plugins:maven-resources-plugin:2.6:resources) @ serverless-workflow-hello-world
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] Copying 3 resources
@@ -790,7 +799,7 @@ __  ____  __  _____   ___  __ ____  ______
  -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \
 --\___\_\____/_/ |_/_/|_/_/|_|\____/___/
 2022-05-25 14:38:09,741 INFO  [org.kie.kog.add.qua.mes.com.QuarkusKogitoExtensionInitializer] (Quarkus Main Thread) Registered Kogito CloudEvent extension
-2022-05-25 14:38:09,840 INFO  [io.quarkus] (Quarkus Main Thread) serverless-workflow-hello-world 1.0.0-SNAPSHOT on JVM (powered by Quarkus 2.15.0.Final) started in 6.470s. Listening on: http://localhost:8080
+2022-05-25 14:38:09,840 INFO  [io.quarkus] (Quarkus Main Thread) serverless-workflow-hello-world 1.0.0-SNAPSHOT on JVM (powered by Quarkus 2.16.0.Final) started in 6.470s. Listening on: http://localhost:8080
 2022-05-25 14:38:09,843 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
 2022-05-25 14:38:09,843 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cache, cdi, jackson-jq, kogito-addon-messaging-extension, kogito-processes, kogito-serverless-workflow, reactive-routes, rest-client, rest-client-jackson, resteasy, resteasy-jackson, smallrye-context-propagation, smallrye-openapi, smallrye-reactive-messaging, smallrye-reactive-messaging-http, swagger-ui, vertx]
 2022-05-25 14:38:12,877 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT: __  ____  __  _____   ___  __ ____  ______
@@ -804,7 +813,6 @@ __  ____  __  _____   ___  __ ____  ______
 2022-05-25 14:38:12,890 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT: 2022-05-25 17:38:12,405 INFO  [io.zon.tes.db.pos.emb.EmbeddedPostgres] (main) 5df1ed6e-7a15-4091-bcfb-e293aa293bfe postmaster startup finished in 00:00:00.180
 2022-05-25 14:38:12,890 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT: 2022-05-25 17:38:12,405 INFO  [org.kie.kog.per.inm.pos.run.InmemoryPostgreSQLRecorder] (main) Embedded Postgres started at port "44729" with database "postgres", user "postgres" and password "postgres"
 2022-05-25 14:38:12,890 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT: 2022-05-25 17:38:12,636 WARN  [io.qua.run.con.ConfigRecorder] (main) Build time property cannot be changed at runtime:
-2022-05-25 14:38:12,891 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT:  - quarkus.jib.base-jvm-image is set to 'ba-docker-registry.usersys.redhat.com:5000/fabric8/java-alpine-openjdk11-jre' but it is build time fixed to 'fabric8/java-alpine-openjdk11-jre'. Did you change the property quarkus.jib.base-jvm-image after building the application?
 2022-05-25 14:38:13,375 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT: 2022-05-25 17:38:13,105 INFO  [org.kie.kog.per.pro.ProtobufService] (main) Registering Kogito ProtoBuffer file: kogito-index.proto
 2022-05-25 14:38:13,377 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT: 2022-05-25 17:38:13,132 INFO  [org.kie.kog.per.pro.ProtobufService] (main) Registering Kogito ProtoBuffer file: kogito-types.proto
 2022-05-25 14:38:13,378 INFO  [org.kie.kog.qua.pro.dev.DataIndexInMemoryContainer] (docker-java-stream--938264210) STDOUT: 2022-05-25 17:38:13,181 INFO  [io.quarkus] (main) data-index-service-inmemory 1.22.0.Final on JVM (powered by Quarkus 2.9.0.Final) started in 4.691s. Listening on: http://0.0.0.0:8080
