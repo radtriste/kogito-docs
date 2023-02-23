@@ -167,6 +167,9 @@
     <a class="nav-link" href="service-orchestration/configuring-openapi-services-endpoints.html">Configuring the OpenAPI services endpoints</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="service-orchestration/orchestration-of-asyncapi-based-services.html">Orchestrating the AsyncAPI services</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="service-orchestration/orchestration-of-grpc-services.html">Orchestration of gRPC based services</a>
   </li>
 </ul>
@@ -266,6 +269,9 @@
     <a class="nav-link" href="integrations/camel-routes-integration.html">Integrating with Camel Routes</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="integrations/custom-functions-knative.html">Invoking Knative services from Serverless Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="integrations/expose-metrics-to-prometheus.html">Exposing workflow base metrics to Prometheus</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -279,6 +285,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="use-cases/orchestration-based-saga-pattern.html">Saga orchestration example in Serverless Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="use-cases/timeout-showcase-example.html">Timeout example in Serverless Workflow</a>
   </li>
 </ul>
   </li>
@@ -300,7 +309,10 @@
           <a href="index.html">snapshot</a>
         </li>
         <li class="version is-latest">
-          <a href="../latest/index.html">1.33</a>
+          <a href="../latest/index.html">1.34</a>
+        </li>
+        <li class="version">
+          <a href="../1.33.0.Final/index.html">1.33</a>
         </li>
         <li class="version">
           <a href="../1.32.0.Final/index.html">1.32</a>
@@ -349,7 +361,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="index.html">snapshot</a>
-    <a class="version" href="../latest/index.html">1.33</a>
+    <a class="version" href="../latest/index.html">1.34</a>
+    <a class="version" href="../1.33.0.Final/index.html">1.33</a>
     <a class="version" href="../1.32.0.Final/index.html">1.32</a>
     <a class="version" href="../1.31.1.Final/index.html">1.31</a>
     <a class="version" href="../1.30.0.Final/index.html">1.30</a>
@@ -369,6 +382,29 @@
 </aside>
 <article class="doc">
 <h1 class="page">Kogito Serverless Workflow Guides</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kogito Serverless Workflow is a tool for building cloud-native workflow applications. You can use it to do the services and events orchestration and choreography. Currently, with Kogito Serverless Workflow you can integrate with services and events in your architecture using:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>CloudEvents</strong>. Ideal for an Event-Driven architecture where the services are ready to consume and produce events working in a more reactive way.</p>
+</li>
+<li>
+<p><strong>Sync or Async REST services invocations via OpenAPI/Async API</strong>. There are options even to directly call a REST service in the architecture or ecosystem. Either async or sync methods are supported depending on your requirements.</p>
+</li>
+<li>
+<p><strong>Internal Service execution or invocation</strong>. Kogito Serverless Workflow is also a workflow framework to build applications. You can use it to create custom services in the same thread to run a lightweight workflow-based application within the same instance.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can learn how to create, manage, and deploy your workflow applications with the following guides.</p>
+</div>
+</div>
+</div>
 <div class="sect1 card-section">
 <h2 id="_getting_started"><a class="anchor" href="#_getting_started"></a>Getting started</h2>
 <div class="sectionbody">
@@ -534,6 +570,16 @@
 </div>
 <div class="paragraph card-description">
 <p>Learn how to orchestrate REST services using OpenAPI specification descriptors</p>
+</div>
+</div>
+</div>
+<div class="openblock card">
+<div class="content">
+<div class="paragraph card-title">
+<p><a href="service-orchestration/orchestration-of-asyncapi-based-services.html" class="xref page">Orchestrating the AsyncAPI services</a></p>
+</div>
+<div class="paragraph card-description">
+<p>Learn how to trigger and consume events using AsyncAPI specification descriptors</p>
 </div>
 </div>
 </div>
@@ -787,6 +833,16 @@
 </div>
 </div>
 </div>
+<div class="openblock card">
+<div class="content">
+<div class="paragraph card-title">
+<p><a href="use-cases/timeout-showcase-example.html" class="xref page">Timeout example in Serverless Workflow</a></p>
+</div>
+<div class="paragraph card-description">
+<p>Learn how and when to use timeout in your workflow projects</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1 card-section">
@@ -799,6 +855,16 @@
 </div>
 <div class="paragraph card-description">
 <p>Learn how to use Camel Routes within your workflow application</p>
+</div>
+</div>
+</div>
+<div class="openblock card">
+<div class="content">
+<div class="paragraph card-title">
+<p><a href="integrations/custom-functions-knative.html" class="xref page">Invoking Knative services from Serverless Workflow</a></p>
+</div>
+<div class="paragraph card-description">
+<p>Learn how to invoke Knative services from Serverless Workflow custom functions</p>
 </div>
 </div>
 </div>

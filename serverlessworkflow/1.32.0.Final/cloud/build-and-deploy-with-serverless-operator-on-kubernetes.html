@@ -299,7 +299,10 @@
           <a href="../../main/index.html">snapshot</a>
         </li>
         <li class="version is-latest">
-          <a href="../../latest/index.html">1.33</a>
+          <a href="../../latest/index.html">1.34</a>
+        </li>
+        <li class="version">
+          <a href="../../1.33.0.Final/index.html">1.33</a>
         </li>
         <li class="version is-current">
           <a href="../index.html">1.32</a>
@@ -350,7 +353,8 @@
   <button class="version-menu-toggle" title="Show other versions of page">1.32</button>
   <div class="version-menu">
     <a class="version" href="../../main/cloud/build-and-deploy-with-serverless-operator-on-kubernetes.html">snapshot</a>
-    <a class="version is-missing" href="../../latest/index.html">1.33</a>
+    <a class="version" href="../../latest/cloud/build-and-deploy-with-serverless-operator-on-kubernetes.html">1.34</a>
+    <a class="version is-missing" href="../../1.33.0.Final/index.html">1.33</a>
     <a class="version is-current" href="build-and-deploy-with-serverless-operator-on-kubernetes.html">1.32</a>
     <a class="version is-missing" href="../../1.31.1.Final/index.html">1.31</a>
     <a class="version is-missing" href="../../1.30.0.Final/index.html">1.30</a>
@@ -501,7 +505,7 @@
 <div class="listingblock">
 <div class="title">Install Kogito Serverless Operator on Kubernetes</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">kubectl create -f https://raw.githubusercontent.com/kiegroup/kogito-serverless-operator/mainF/operator.yaml</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">kubectl create -f https://raw.githubusercontent.com/kiegroup/kogito-serverless-operator/v1.32.0F/operator.yaml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -576,7 +580,7 @@ You can find a basic Kogito Serverless Platform CR example in the <code>config/s
 <div class="listingblock">
 <div class="title">Create a Kogito Serverless Platform CR</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/kiegroup/kogito-serverless-operator/main/config/samples/sw.kogito_v1alpha08_kogitoserverlessplatform.yaml -n kogito-workflows</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/kiegroup/kogito-serverless-operator/v1.32.0/config/samples/sw.kogito_v1alpha08_kogitoserverlessplatform.yaml -n kogito-workflows</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -595,7 +599,7 @@ You can find a basic Kogito Serverless Platform CR example in the <code>config/s
 <div class="listingblock">
 <div class="title">Create a Kogito Serverless Platform CR with a specific registry</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl https://raw.githubusercontent.com/kiegroup/kogito-serverless-operator/main/config/samples/sw.kogito_v1alpha08_kogitoserverlessplatform.yaml | sed "s|address: .*|address: &lt;YOUR_REGISTRY&gt;" | kubectl apply -f -</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl https://raw.githubusercontent.com/kiegroup/kogito-serverless-operator/v1.32.0/config/samples/sw.kogito_v1alpha08_kogitoserverlessplatform.yaml | sed "s|address: .*|address: &lt;YOUR_REGISTRY&gt;" | kubectl apply -f -</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -625,7 +629,7 @@ You can find a basic Kogito Serverless Platform CR example in the <code>config/s
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/kiegroup/kogito-serverless-operator/main/config/samples/sw.kogito_v1alpha08_kogitoserverlessworkflow.yaml -n kogito-workflows</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">kubectl apply -f https://raw.githubusercontent.com/kiegroup/kogito-serverless-operator/v1.32.0/config/samples/sw.kogito_v1alpha08_kogitoserverlessworkflow.yaml -n kogito-workflows</code></pre>
 </div>
 </div>
 <div class="paragraph">
