@@ -130,6 +130,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../tooling/quarkus-dev-ui-extension/quarkus-dev-ui-workflow-definition-page.html">Workflow Definitions in Kogito Serverless Workflow Tools extension</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">Dashboards in Kogito Serverless Workflow Tools extension</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -311,7 +314,13 @@
           <a href="../index.html">snapshot</a>
         </li>
         <li class="version is-latest">
-          <a href="../../latest/index.html">1.34</a>
+          <a href="../../latest/index.html">1.36</a>
+        </li>
+        <li class="version">
+          <a href="../../1.35.0.Final/index.html">1.35</a>
+        </li>
+        <li class="version">
+          <a href="../../1.34.0.Final/index.html">1.34</a>
         </li>
         <li class="version">
           <a href="../../1.33.0.Final/index.html">1.33</a>
@@ -365,7 +374,9 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="consume-producing-events-with-kafka.html">snapshot</a>
-    <a class="version" href="../../latest/eventing/consume-producing-events-with-kafka.html">1.34</a>
+    <a class="version" href="../../latest/eventing/consume-producing-events-with-kafka.html">1.36</a>
+    <a class="version" href="../../1.35.0.Final/eventing/consume-producing-events-with-kafka.html">1.35</a>
+    <a class="version" href="../../1.34.0.Final/eventing/consume-producing-events-with-kafka.html">1.34</a>
     <a class="version" href="../../1.33.0.Final/eventing/consume-producing-events-with-kafka.html">1.33</a>
     <a class="version" href="../../1.32.0.Final/eventing/consume-producing-events-with-kafka.html">1.32</a>
     <a class="version" href="../../1.31.1.Final/eventing/consume-producing-events-with-kafka.html">1.31</a>
@@ -546,6 +557,30 @@ mp.messaging.outgoing.kogito_outgoing_stream.value.serializer=org.apache.kafka.c
 </dd>
 </dl>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_onoverflow_handling"><a class="anchor" href="#_onoverflow_handling"></a>OnOverflow handling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Smallrye provide means to <a href="https://quarkus.io/blog/reactive-messaging-emitter/#overflow-management">manage emitter overflow</a> through <a href="https://smallrye.io/smallrye-reactive-messaging/2.0.3/apidocs/io/smallrye/reactive/messaging/annotations/OnOverflow.html">OnOverflow</a> annotation</p>
+</div>
+<div class="paragraph">
+<p>Kogito will annotate generated smallrye <code>emitters</code> for a particular channel using the information provided by a property of the form <code>kogito.addon.messaging.emitter.&lt;channel_name&gt;.overflow-strategy</code>. The possible values are <code>BUFFER</code>, <code>NONE</code>, <code>UNBOUNDED</code>, <code>FAIL</code>, and <code>DROP</code>. If the value of the strategy is <code>BUFFER</code>, then you must specify the buffer size by using the property of the form <code>kogito.addon.messaging.emitter.&lt;channel_name&gt;.buffer-size</code></p>
+</div>
+<div class="paragraph">
+<p>Therefore, for the <code>wait</code> channel, in the previous example, if we want to buffer as many as 100 events we will add these two properties</p>
+</div>
+<div class="listingblock">
+<div class="title">Example overflow configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">kogito.addon.messaging.emitter.wait.overflow-strategy=BUFFER
+kogito.addon.messaging.emitter.wait.buffer-size=100</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If all your channels use the same strategy and this strategy differs from the <code>BUFFER</code> one (you can change buffer size globally by using the <code>mp.messaging.emitter.default-buffer-size</code> smallrye property). You can set it up by using <code>kogito.addon.messaging.emitter.overflow-strategy=NONE|UNBOUNDED|FAIL|DROP</code></p>
 </div>
 </div>
 </div>
