@@ -350,13 +350,16 @@
           <a href="../../index.html">snapshot</a>
         </li>
         <li class="version">
-          <a href="../../../1.38.0-SNAPSHOT/index.html">1.38-RC</a>
-        </li>
-        <li class="version">
-          <a href="../../../1.37.0-SNAPSHOT/index.html">1.37-RC</a>
+          <a href="../../../1.39.0-SNAPSHOT/index.html">1.39-RC</a>
         </li>
         <li class="version is-latest">
-          <a href="../../../latest/index.html">1.36</a>
+          <a href="../../../latest/index.html">1.38</a>
+        </li>
+        <li class="version">
+          <a href="../../../1.37.0.Final/index.html">1.37</a>
+        </li>
+        <li class="version">
+          <a href="../../../1.36.1.Final/index.html">1.36</a>
         </li>
         <li class="version">
           <a href="../../../1.35.0.Final/index.html">1.35</a>
@@ -417,9 +420,10 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="developing-workflows.html">snapshot</a>
-    <a class="version" href="../../../1.38.0-SNAPSHOT/cloud/operator/developing-workflows.html">1.38-RC</a>
-    <a class="version" href="../../../1.37.0-SNAPSHOT/cloud/operator/developing-workflows.html">1.37-RC</a>
-    <a class="version is-missing" href="../../../latest/index.html">1.36</a>
+    <a class="version" href="../../../1.39.0-SNAPSHOT/cloud/operator/developing-workflows.html">1.39-RC</a>
+    <a class="version" href="../../../latest/cloud/operator/developing-workflows.html">1.38</a>
+    <a class="version" href="../../../1.37.0.Final/cloud/operator/developing-workflows.html">1.37</a>
+    <a class="version is-missing" href="../../../1.36.1.Final/index.html">1.36</a>
     <a class="version is-missing" href="../../../1.35.0.Final/index.html">1.35</a>
     <a class="version is-missing" href="../../../1.34.0.Final/index.html">1.34</a>
     <a class="version is-missing" href="../../../1.33.0.Final/index.html">1.33</a>
@@ -487,39 +491,40 @@ metadata:
     sw.kogito.kie.org/version: 0.0.1
     sw.kogito.kie.org/profile: dev <i class="conum" data-value="1"></i><b>(1)</b>
 spec: <i class="conum" data-value="2"></i><b>(2)</b>
-  start: ChooseOnLanguage
-  functions:
-    - name: greetFunction
-      type: custom
-      operation: sysout
-  states:
-    - name: ChooseOnLanguage
-      type: switch
-      dataConditions:
-        - condition: "${ .language == \"English\" }"
-          transition: GreetInEnglish
-        - condition: "${ .language == \"Spanish\" }"
-          transition: GreetInSpanish
-      defaultCondition: GreetInEnglish
-    - name: GreetInEnglish
-      type: inject
-      data:
-        greeting: "Hello from JSON Workflow, "
-      transition: GreetPerson
-    - name: GreetInSpanish
-      type: inject
-      data:
-        greeting: "Saludos desde JSON Workflow, "
-      transition: GreetPerson
-    - name: GreetPerson
-      type: operation
-      actions:
-        - name: greetAction
-          functionRef:
-            refName: greetFunction
-            arguments:
-              message:  ".greeting+.name"
-      end: true</code></pre>
+  flow:
+    start: ChooseOnLanguage
+    functions:
+      - name: greetFunction
+        type: custom
+        operation: sysout
+    states:
+      - name: ChooseOnLanguage
+        type: switch
+        dataConditions:
+          - condition: "${ .language == \"English\" }"
+            transition: GreetInEnglish
+          - condition: "${ .language == \"Spanish\" }"
+            transition: GreetInSpanish
+        defaultCondition: GreetInEnglish
+      - name: GreetInEnglish
+        type: inject
+        data:
+          greeting: "Hello from JSON Workflow, "
+        transition: GreetPerson
+      - name: GreetInSpanish
+        type: inject
+        data:
+          greeting: "Saludos desde JSON Workflow, "
+        transition: GreetPerson
+      - name: GreetPerson
+        type: operation
+        actions:
+          - name: greetAction
+            functionRef:
+              refName: greetFunction
+              arguments:
+                message:  ".greeting+.name"
+        end: true</code></pre>
 </div>
 </div>
 <div class="colist arabic">

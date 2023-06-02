@@ -350,13 +350,16 @@
           <a href="../../index.html">snapshot</a>
         </li>
         <li class="version">
-          <a href="../../../1.38.0-SNAPSHOT/index.html">1.38-RC</a>
-        </li>
-        <li class="version">
-          <a href="../../../1.37.0-SNAPSHOT/index.html">1.37-RC</a>
+          <a href="../../../1.39.0-SNAPSHOT/index.html">1.39-RC</a>
         </li>
         <li class="version is-latest">
-          <a href="../../../latest/index.html">1.36</a>
+          <a href="../../../latest/index.html">1.38</a>
+        </li>
+        <li class="version">
+          <a href="../../../1.37.0.Final/index.html">1.37</a>
+        </li>
+        <li class="version">
+          <a href="../../../1.36.1.Final/index.html">1.36</a>
         </li>
         <li class="version">
           <a href="../../../1.35.0.Final/index.html">1.35</a>
@@ -417,9 +420,10 @@
   <button class="version-menu-toggle" title="Show other versions of page">snapshot</button>
   <div class="version-menu">
     <a class="version is-current" href="kubernetes-service-discovery.html">snapshot</a>
-    <a class="version" href="../../../1.38.0-SNAPSHOT/cloud/quarkus/kubernetes-service-discovery.html">1.38-RC</a>
-    <a class="version" href="../../../1.37.0-SNAPSHOT/cloud/quarkus/kubernetes-service-discovery.html">1.37-RC</a>
-    <a class="version is-missing" href="../../../latest/index.html">1.36</a>
+    <a class="version" href="../../../1.39.0-SNAPSHOT/cloud/quarkus/kubernetes-service-discovery.html">1.39-RC</a>
+    <a class="version" href="../../../latest/cloud/quarkus/kubernetes-service-discovery.html">1.38</a>
+    <a class="version" href="../../../1.37.0.Final/cloud/quarkus/kubernetes-service-discovery.html">1.37</a>
+    <a class="version is-missing" href="../../../1.36.1.Final/index.html">1.36</a>
     <a class="version is-missing" href="../../../1.35.0.Final/index.html">1.35</a>
     <a class="version is-missing" href="../../../1.34.0.Final/index.html">1.34</a>
     <a class="version is-missing" href="../../../1.33.0.Final/index.html">1.33</a>
@@ -456,9 +460,9 @@
 <div class="listingblock">
 <div class="title">URI pattern in Kubernetes service discovery</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">kubernetes:&lt;group&gt;/&lt;version&gt;/&lt;kind&gt;/&lt;namespace&gt;/&lt;resourceName&gt;?&lt;attributeName&gt;=&lt;attributeValue&gt;
-\________/ \_____/ \_______/ \____/ \_________/ \____________/ \______________________________/
-  scheme    group   version   kind   namespace   resourceName   additional resource attributes
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">kubernetes:&lt;kind&gt;.&lt;version&gt;.&lt;group&gt;/&lt;namespace&gt;/&lt;resourceName&gt;?&lt;attributeName&gt;=&lt;attributeValue&gt;
+\________/ \____/ \_______/ \_____/ \_________/ \____________/ \______________________________/
+  scheme    kind   version   group   namespace   resourceName   additional resource attributes
             \____________________/                               \__________________________/
                      GVK                                           Supported values:
                                                                    - port-name={PORT_NAME}
@@ -487,28 +491,28 @@
 <div class="ulist">
 <ul>
 <li>
-<p><code>v1/service</code></p>
+<p><code>services.v1</code></p>
 </li>
 <li>
-<p><code>serving.knative.dev/v1/service</code></p>
+<p><code>services.v1.serving.knative.dev</code></p>
 </li>
 <li>
-<p><code>v1/pod</code></p>
+<p><code>pods.v1</code></p>
 </li>
 <li>
-<p><code>apps/v1/deployment</code></p>
+<p><code>deployments.v1.apps</code></p>
 </li>
 <li>
-<p><code>apps.openshift.io/v1/deploymentconfig</code></p>
+<p><code>deploymentconfigs.v1.apps.openshift.io</code></p>
 </li>
 <li>
-<p><code>apps/v1/statefulset</code></p>
+<p><code>statefulsets.v1.apps</code></p>
 </li>
 <li>
-<p><code>route.openshift.io/v1/route</code></p>
+<p><code>routes.v1.route.openshift.io</code></p>
 </li>
 <li>
-<p><code>networking.k8s.io/v1/ingress</code></p>
+<p><code>ingresses.v1.networking.k8s.io</code></p>
 </li>
 </ul>
 </div>
@@ -528,7 +532,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>The above URI looks directly for serving.knative.dev/v1/service resource.</p>
+<p>The above URI looks directly for services.v1.serving.knative.dev resource.</p>
 </div>
 </td>
 </tr>
@@ -573,7 +577,7 @@
 <div class="listingblock">
 <div class="title">Example label definition in URI</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">kubernetes:v1/pod/&lt;namespace&gt;/&lt;pod-name&gt;?labels=label-name=test-label</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">kubernetes:pods.v1/&lt;namespace&gt;/&lt;pod-name&gt;?labels=label-name=test-label</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -637,7 +641,7 @@
 <div class="listingblock">
 <div class="title">Example URI</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">org.kie.kogito.sw.knative.service=knative:v1/Service/serverless-workflow-greeting-quarkus/greeting-quarkus-cli</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">org.kie.kogito.sw.knative.service=knative:services.v1/serverless-workflow-greeting-quarkus/greeting-quarkus-cli</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -723,13 +727,11 @@ __  ____  __  _____   ___  __ ____  ______
 </div>
 </div>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
+</div>
+</div>
+<div class="sect1">
+<h2 id="ref-enabling-kubernetes-service-discovery"><a class="anchor" href="#ref-enabling-kubernetes-service-discovery"></a>Enabling Kubernetes service discovery</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>When using the Kubernetes service discovery feature, you need to balance if your application can afford the delayed startup time.</p>
 </div>
@@ -737,30 +739,22 @@ __  ____  __  _____   ___  __ ____  ______
 <p>If the URI pattern is not found in the application properties, then discovery is not triggered. However, the scanning is performed anyway. Therefore, a short time is required to go through the startup scan.</p>
 </div>
 <div class="paragraph">
-<p>You can disable the Kubernetes service discovery by removing the <code>kogito-addons-quarkus-kubernetes</code> library from the application&#8217;s dependencies as shown in the following Maven exclusions:</p>
+<p>You can enable the Kubernetes service discovery by adding a service discovery implementation to the application&#8217;s dependencies as shown in the following Maven dependencies:</p>
 </div>
 <div class="listingblock">
-<div class="title">Example Maven exclusions</div>
+<div class="title">Example Maven dependencies</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">&lt;dependency&gt;
-  &lt;groupId&gt;org.kie.kogito&lt;/groupId&gt;
-  &lt;artifactId&gt;kogito-quarkus-serverless-workflow&lt;/artifactId&gt;
-  &lt;exclusions&gt;
-    &lt;exclusion&gt;
-      &lt;groupId&gt;org.kie.kogito&lt;/groupId&gt;
-      &lt;artifactId&gt;kogito-addons-quarkus-kubernetes&lt;/artifactId&gt;
-    &lt;/exclusion&gt;
-    &lt;exclusion&gt;
-      &lt;groupId&gt;org.kie.kogito&lt;/groupId&gt;
-      &lt;artifactId&gt;kogito-addons-quarkus-kubernetes-deployment&lt;/artifactId&gt;
-    &lt;/exclusion&gt;
-  &lt;/exclusions&gt;
+    &lt;groupId&gt;org.kie.kogito&lt;/groupId&gt;
+    &lt;artifactId&gt;kogito-addons-quarkus-fabric8-kubernetes-service-catalog&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
-</td>
-</tr>
-</table>
+<div class="sect2">
+<h3 id="_available_service_discovery_implementations"><a class="anchor" href="#_available_service_discovery_implementations"></a>Available service discovery implementations</h3>
+<div class="paragraph">
+<p>Currently, only <code>org.kie.kogito:kogito-addons-quarkus-fabric8-kubernetes-service-catalog</code> is available. When enabled, it uses the Kubernetes Java API to discover the services.</p>
+</div>
 </div>
 </div>
 </div>
