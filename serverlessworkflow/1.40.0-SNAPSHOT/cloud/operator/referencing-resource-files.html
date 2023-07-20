@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Dashboards in Kogito Serverless Workflow Tools extension :: Kogito Serverless Workflow Guides</title>
-    <meta name="description" content="Dashboards in Kogito Serverless Workflow Tools extension">
-    <meta name="keywords" content="kogito, workflow, serverless, Quarkus, Dev UI, Dashboards">
+    <title>Referencing Additional Files in the Workflow :: Kogito Serverless Workflow Guides</title>
+    <meta name="description" content="Referencing external additional files in a workflow definition">
+    <meta name="keywords" content="sonataflow, workflow, serverless, operator, kubernetes, minikube, configmap">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
 <link rel="icon" href="../../../../_/img/favicon.ico" type="image/x-icon">
@@ -112,47 +112,29 @@
     <span class="nav-text">Tooling</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../serverless-workflow-editor/swf-editor-overview.html">Serverless Workflow editor</a>
+    <a class="nav-link" href="../../tooling/serverless-workflow-editor/swf-editor-overview.html">Editor</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../serverless-workflow-editor/swf-editor-vscode-extension.html">VS Code extension for Serverless Workflow editor</a>
+    <a class="nav-link" href="../../tooling/serverless-workflow-editor/swf-editor-vscode-extension.html">VS Code extension</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../serverless-workflow-editor/swf-editor-chrome-extension.html">Chrome GitHub extension for Serverless Workflow editor</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="quarkus-dev-ui-overview.html">Kogito Serverless Workflow Tools extension in Quarkus Dev UI</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="quarkus-dev-ui-workflow-instances-page.html">Workflow Instances in Kogito Serverless Workflow Tools extension</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="quarkus-dev-ui-workflow-definition-page.html">Workflow Definitions in Kogito Serverless Workflow Tools extension</a>
-  </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="quarkus-dev-ui-custom-dashboard-page.html">Dashboards in Kogito Serverless Workflow Tools extension</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../kn-plugin-workflow-overview.html">Kogito Serverless Workflow plug-in for Knative CLI</a>
+    <a class="nav-link" href="../../tooling/serverless-workflow-editor/swf-editor-chrome-extension.html">Chrome extension for GitHub</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../serverless-logic-web-tools/serverless-logic-web-tools-overview.html">Serverless Logic Web Tools</a>
+    <a class="nav-link" href="../../tooling/serverless-logic-web-tools/serverless-logic-web-tools-overview.html">Serverless Logic Web Tools</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../serverless-logic-web-tools/serverless-logic-web-tools-github-integration.html">Integrating your workflow project in GitHub using Serverless Logic Web Tools</a>
+    <a class="nav-link" href="../../tooling/serverless-logic-web-tools/serverless-logic-web-tools-github-integration.html">Integration with GitHub</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../serverless-logic-web-tools/serverless-logic-web-tools-openshift-integration.html">Integrating your workflow project with OpenShift using Serverless Logic Web Tools</a>
+    <a class="nav-link" href="../../tooling/serverless-logic-web-tools/serverless-logic-web-tools-openshift-integration.html">Integration with OpenShift</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../serverless-logic-web-tools/serverless-logic-web-tools-redhat-application-services-integration.html">Integrating with Red Hat OpenShift Application and Data Services</a>
+    <a class="nav-link" href="../../tooling/serverless-logic-web-tools/serverless-logic-web-tools-redhat-application-services-integration.html">Integration with Service Registries</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../serverless-logic-web-tools/serverless-logic-web-tools-deploy-projects.html">Deploying your workflow projects using Serverless Logic Web Tools</a>
+    <a class="nav-link" href="../../tooling/serverless-logic-web-tools/serverless-logic-web-tools-deploy-projects.html">Deployment</a>
   </li>
 </ul>
   </li>
@@ -205,28 +187,61 @@
     <span class="nav-text">Security</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../security/authention-support-for-openapi-services.html">Authentication for OpenAPI services</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Client Authentication</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../security/authention-support-for-openapi-services.html">OpenAPI Authentication</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../security/orchestrating-third-party-services-with-oauth2.html">Orchestration of third-party services using OAuth 2.0 authentication</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../security/orchestrating-third-party-services-with-oauth2.html">OpenAPI OAuth2</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Testing and Troubleshooting</span>
+    <span class="nav-text">Executing, Testing and Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../testing-and-troubleshooting/mocking-http-cloudevents-with-wiremock.html">Mocking HTTP CloudEvents sink using WireMock</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Executing and Testing Workflows</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../testing-and-troubleshooting/quarkus-dev-ui-extension/quarkus-dev-ui-overview.html">Developer UI</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../testing-and-troubleshooting/quarkus-dev-ui-extension/quarkus-dev-ui-workflow-instances-page.html">Workflow Instances</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../testing-and-troubleshooting/quarkus-dev-ui-extension/quarkus-dev-ui-workflow-definition-page.html">Workflow Definitions</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../testing-and-troubleshooting/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">Dashboards</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../testing-and-troubleshooting/kn-plugin-workflow-overview.html">Command Line</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../testing-and-troubleshooting/mocking-openapi-services-with-wiremock.html">Mocking OpenAPI services using WireMock</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Quarkus</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../testing-and-troubleshooting/mocking-http-cloudevents-with-wiremock.html">Mocking HTTP CloudEvents</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../testing-and-troubleshooting/basic-integration-tests-with-restassured.html">Testing using REST Assured</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../testing-and-troubleshooting/mocking-openapi-services-with-wiremock.html">Mocking OpenAPI Services</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../testing-and-troubleshooting/integration-tests-with-postgresql.html">Integration tests using PostgreSQL</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../testing-and-troubleshooting/basic-integration-tests-with-restassured.html">Testing with REST Assured</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -244,29 +259,32 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../cloud/index.html">Cloud</a>
+    <a class="nav-link" href="../index.html">Cloud</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Operator</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/operator/install-serverless-operator.html">Installation</a>
+    <a class="nav-link" href="install-serverless-operator.html">Installation</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/operator/developing-workflows.html">Developing Workflows</a>
+    <a class="nav-link" href="developing-workflows.html">Development Mode</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="referencing-resource-files.html">Referencing Workflow Resources</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/operator/configuring-workflows.html">Configuring Workflows</a>
+    <a class="nav-link" href="configuring-workflows.html">Configuration</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/operator/workflow-status-conditions.html">Workflows Status</a>
+    <a class="nav-link" href="build-and-deploy-workflows.html">Building and Deploying Workflow Images</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/operator/build-and-deploy-workflows.html">Building and Deploying Workflows</a>
+    <a class="nav-link" href="workflow-status-conditions.html">Custom Resource Status</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/operator/known-issues.html">Known Issues</a>
+    <a class="nav-link" href="known-issues.html">Known Issues</a>
   </li>
 </ul>
   </li>
@@ -275,19 +293,19 @@
     <span class="nav-text">Quarkus</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/quarkus/build-workflow-image-with-quarkus-cli.html">Building workflow images using Quarkus CLI</a>
+    <a class="nav-link" href="../quarkus/build-workflow-image-with-quarkus-cli.html">Building workflow images using Quarkus CLI</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/quarkus/deploying-on-openshift.html">Deploying Workflows on OpenShift</a>
+    <a class="nav-link" href="../quarkus/deploying-on-openshift.html">Deploying Workflows on OpenShift</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/quarkus/deploying-on-minikube.html">Deploying Workflows on Minikube</a>
+    <a class="nav-link" href="../quarkus/deploying-on-minikube.html">Deploying Workflows on Minikube</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/quarkus/deploying-on-kubernetes.html">Deploying Workflows on Kubernetes</a>
+    <a class="nav-link" href="../quarkus/deploying-on-kubernetes.html">Deploying Workflows on Kubernetes</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../cloud/quarkus/kubernetes-service-discovery.html">Kubernetes service discovery</a>
+    <a class="nav-link" href="../quarkus/kubernetes-service-discovery.html">Kubernetes service discovery</a>
   </li>
 </ul>
   </li>
@@ -420,24 +438,24 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../index.html">Kogito Serverless Workflow Guides</a></li>
-    <li>Tooling</li>
-    <li><a href="quarkus-dev-ui-overview.html">Kogito Serverless Workflow Tools extension in Quarkus Dev UI</a></li>
-    <li><a href="quarkus-dev-ui-custom-dashboard-page.html">Dashboards in Kogito Serverless Workflow Tools extension</a></li>
+    <li><a href="../index.html">Cloud</a></li>
+    <li>Operator</li>
+    <li><a href="referencing-resource-files.html">Referencing Workflow Resources</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">1.40-RC</button>
   <div class="version-menu">
-    <a class="version is-missing" href="../../../main/index.html">snapshot</a>
-    <a class="version" href="../../../1.41.0-SNAPSHOT/tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">1.41-RC</a>
-    <a class="version" href="../../../latest/tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">1.40</a>
-    <a class="version is-current" href="quarkus-dev-ui-custom-dashboard-page.html">1.40-RC</a>
-    <a class="version" href="../../../1.39.0.Final/tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">1.39</a>
-    <a class="version" href="../../../1.38.0.Final/tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">1.38</a>
-    <a class="version" href="../../../1.37.0.Final/tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">1.37</a>
-    <a class="version" href="../../../1.36.1.Final/tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">1.36</a>
-    <a class="version" href="../../../1.35.0.Final/tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">1.35</a>
-    <a class="version" href="../../../1.34.0.Final/tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.html">1.34</a>
+    <a class="version" href="../../../main/cloud/operator/referencing-resource-files.html">snapshot</a>
+    <a class="version" href="../../../1.41.0-SNAPSHOT/cloud/operator/referencing-resource-files.html">1.41-RC</a>
+    <a class="version" href="../../../latest/cloud/operator/referencing-resource-files.html">1.40</a>
+    <a class="version is-current" href="referencing-resource-files.html">1.40-RC</a>
+    <a class="version is-missing" href="../../../1.39.0.Final/index.html">1.39</a>
+    <a class="version is-missing" href="../../../1.38.0.Final/index.html">1.38</a>
+    <a class="version is-missing" href="../../../1.37.0.Final/index.html">1.37</a>
+    <a class="version is-missing" href="../../../1.36.1.Final/index.html">1.36</a>
+    <a class="version is-missing" href="../../../1.35.0.Final/index.html">1.35</a>
+    <a class="version is-missing" href="../../../1.34.0.Final/index.html">1.34</a>
     <a class="version is-missing" href="../../../1.33.0.Final/index.html">1.33</a>
     <a class="version is-missing" href="../../../1.32.0.Final/index.html">1.32</a>
     <a class="version is-missing" href="../../../1.31.1.Final/index.html">1.31</a>
@@ -450,88 +468,240 @@
     <a class="version is-missing" href="../../../1.24.1.Final/index.html">1.24</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/kiegroup/kogito-docs/edit/1.40.x-prod/serverlessworkflow/modules/ROOT/pages/tooling/quarkus-dev-ui-extension/quarkus-dev-ui-custom-dashboard-page.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/kiegroup/kogito-docs/edit/1.40.x-prod/serverlessworkflow/modules/ROOT/pages/cloud/operator/referencing-resource-files.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Dashboards in Kogito Serverless Workflow Tools extension</h1>
+<h1 class="page">Referencing Additional Files in the Workflow</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In Kogito Serverless Workflow Tools, the Dashboards page is used to display the available dashboard files. The page displays a list of available dashboards and add filters to the list.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/tooling/quarkus-dev-ui-extension/kogito-swf-tools-dashboard-list.png" alt="kogito swf tools dashboard list">
-</div>
-<div class="title">Figure 1. Dashboard page</div>
+<p>This document describes how to reference additional files in the <code>SonataFlow</code> Custom Resource (CR).</p>
 </div>
 <div class="paragraph">
-<p>The table on the Dashboards page displays the following details:</p>
+<p>Most of the time, a workflow definition will require not only the flow definition, but also OpenAPI or AsyncAPI specification descriptors, schemas, subflows definitions, and etc.
+For example, when doing <a href="../../service-orchestration/orchestration-of-openapi-based-services.html" class="xref page">service orchestration using OpenAPI descriptors</a>, you need to tell the workflow where to find these descriptors in your context.</p>
 </div>
+<div class="paragraph">
+<p>If these files are not in a remote location that can be accessed via the HTTP protocol, you must describe in the <code>SonataFlow</code> CR where to find them within the cluster. This is done via <a href="https://kubernetes.io/docs/concepts/configuration/configmap/"><code>ConfigMaps</code></a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_configmaps_with_workflow_additional_files"><a class="anchor" href="#_creating_configmaps_with_workflow_additional_files"></a>Creating ConfigMaps with Workflow Additional Files</h2>
+<div class="sectionbody">
 <div class="ulist">
+<div class="title">Prerequisites</div>
 <ul>
 <li>
-<p><strong>Name</strong>: the name of a custom dashboard.</p>
+<p>You have the files available in your file system</p>
 </li>
 <li>
-<p><strong>Last Modified</strong>: the time reference indicating when the custom dashboard was last updated.</p>
+<p>You have permissions to create <code>ConfigMaps</code> in the target namespace</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Given that you already have the file you want to add to your workflow definition, you <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-a-configmap">can create a <code>ConfigMap</code></a> as you normally would with the contents of the file.</p>
+</div>
+<div class="paragraph">
+<p>For example, given the following workflow:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of a workflow referencing additional files</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: sonataflow.org/v1alpha08
+kind: SonataFlow
+metadata:
+  name: service
+  annotations:
+    sonataflow.org/description: Hello Service!
+    sonataflow.org/version: 0.0.1
+    sonataflow.org/profile: dev
+spec:
+  flow:
+    start: Service
+    dataInputSchema: specs/workflow-service-schema.json <i class="conum" data-value="1"></i><b>(1)</b>
+    functions:
+    - name: isWinner
+      operation: specs/workflow-service-openapi.json#isWinner <i class="conum" data-value="2"></i><b>(2)</b>
+      type: rest
+    states:
+    - name: Service
+      type: operation
+      actions:
+      - name: CallService
+        functionRef:
+          refName: isWinner
+    end: true</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The workflow defines an input schema</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The workflow requires an OpenAPI specification file to make a REST invocation</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For this example, you have two options. You can either create two <code>ConfigMaps</code> to have a clear separation of concerns or only one with both files.</p>
+</div>
+<div class="paragraph">
+<p>From the operator perspective, it won&#8217;t make any difference since both files will be available for the workflow application at runtime.</p>
+</div>
+<div class="paragraph">
+<p>To make it simple, you can create only one <code>ConfigMap</code>. Given that the files are available in the current directory:</p>
+</div>
+<div class="listingblock">
+<div class="title">Creating a ConfigMap from the current directory</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">kubectl create configmap service-files --from-file=$(pwd) -n &lt;workflow-namespace&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Replace <code>&lt;workflow-namespace&gt;</code> with the namespace where you are going to deploy the workflow. The operator won&#8217;t access <code>ConfigMaps</code> in other namespaces.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You should have a <code>ConfigMap</code> with two data entries similar to this one:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of a ConfigMap containing the data for the worflow</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: service-files
+data:
+  workflow-service-schema.json: # data was removed to save space
+  workflow-service-openapi.json: # data was removed to save space</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you can reference this <code>ConfigMap</code> to your <code>SonataFlow</code> CR:</p>
+</div>
+<div class="listingblock">
+<div class="title">SonataFlow CR referencing a ConfigMap resource</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: sonataflow.org/v1alpha08
+kind: SonataFlow
+metadata:
+  name: service
+  annotations:
+    sonataflow.org/description: Hello Service!
+    sonataflow.org/version: 0.0.1
+    sonataflow.org/profile: dev
+spec:
+  resources: <i class="conum" data-value="1"></i><b>(1)</b>
+    configMaps:
+      - configMap:
+          name: service-files <i class="conum" data-value="2"></i><b>(2)</b>
+        workflowPath: specs <i class="conum" data-value="3"></i><b>(3)</b>
+  flow:
+    start: Service
+    dataInputSchema: specs/workflow-service-schema.json
+    functions:
+    - name: isWinner
+      operation: specs/workflow-service-openapi.json#isWinner
+      type: rest
+    states:
+    - name: Service
+      type: operation
+      actions:
+      - name: CallService
+        functionRef:
+          refName: isWinner
+    end: true</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Introduced a new attribute <code>.spec.resources</code> where you can bind the <code>ConfigMap</code> to the <code>SonataFlow</code> CR</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The name of the <code>ConfigMap</code> in the same namespace</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The path where we want to reference these files</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Note that the <code>workflowPath</code> is <code>specs</code>. This is the path where you want to reference the files within the <code>ConfigMap</code> in the workflow definition.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Always create your <code>ConfigMaps</code> before the <code>SonataFlow</code> since not having the files available during startup might break the deployment.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Any files you have to map to the flow definition can be added to the <code>SonataFlow</code> CR using this procedure.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_creating_a_custom_dashboard"><a class="anchor" href="#_creating_a_custom_dashboard"></a>Creating a custom dashboard</h2>
+<h2 id="_creating_a_static_service_registry"><a class="anchor" href="#_creating_a_static_service_registry"></a>Creating a Static Service Registry</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_create_a_custom_dashboard_file"><a class="anchor" href="#_create_a_custom_dashboard_file"></a>Create a custom dashboard file</h3>
 <div class="paragraph">
-<p>See the <a href="https://www.dashbuilder.org/docs/#chap-dashbuilder-yaml-guides">dashboard guide</a> for creating dashboards and visualizations with YAML. You can run all examples with <a href="https://start.kubesmarts.org/">Dashbuilder YAML Online</a>.</p>
+<p>The <code>ConfigMap</code> containing workflow files are not tied to a particular <code>SonataFlow</code> instance, just referenced by it. It means that the operator won&#8217;t edit or delete them if the <code>SonataFlow</code> CR is updated or deleted. You have total control of the <code>ConfigMap</code> instance.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_storage_path_of_custom_dashboards"><a class="anchor" href="#_storage_path_of_custom_dashboards"></a>Storage path of custom dashboards</h3>
 <div class="paragraph">
-<p>The default storage path for dashboard files is <strong>src/main/resources/dashboards</strong>, but the property <strong>quarkus.kogito-runtime-tools.custom.dashboard.folder</strong> can be used to set a custom storage path.</p>
+<p>You can organize your <code>ConfigMaps</code> in a way that other workflows could reuse them. In other words, one <code>ConfigMap</code> can be mapped to many <code>SonataFlow</code> Custom Resources.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/tooling/quarkus-dev-ui-extension/kogito-swf-tools-dashboard-storage-path.png" alt="kogito swf tools dashboard storage path">
+<div class="paragraph">
+<p>For example, if you have many <a href="../../service-orchestration/orchestration-of-openapi-based-services.html" class="xref page">OpenAPI</a> or <a href="#eventing/orchestration-of-asyncapi-based-services.adoc" class="xref unresolved">AsyncAPI</a> specification files that your workflows can access, you can group them by domain. This way you create a static Service Registry using <code>ConfigMaps</code>. Other developers within your company can reuse the same specification files when designing workflows.</p>
 </div>
-<div class="title">Figure 2. Default storage path</div>
-</div>
+<div class="paragraph">
+<p>The same applies for data input and output schemas, subflows definitions, and so on.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_filtering_the_dashboards"><a class="anchor" href="#_filtering_the_dashboards"></a>Filtering the dashboards</h2>
+<h2 id="_additional_resources"><a class="anchor" href="#_additional_resources"></a>Additional resources</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>To filter the dashboard based on name, enter a name in the <strong>Filter by dashboard name</strong> field and click <strong>Apply filter</strong> button.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/tooling/quarkus-dev-ui-extension/kogito-swf-tools-filters-in-dashboards.png" alt="kogito swf tools filters in dashboards">
-</div>
-<div class="title">Figure 3. Example filters applied on the dashboards</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_accessing_a_dashboard_details"><a class="anchor" href="#_accessing_a_dashboard_details"></a>Accessing a dashboard details</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In the dashboard table, the <strong>name</strong> column contains a clickable link, which enables you to navigate to the <strong>Dashboard Details</strong> page.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/tooling/quarkus-dev-ui-extension/kogito-swf-tools-dashboard-details.png" alt="kogito swf tools dashboard details">
-</div>
-<div class="title">Figure 4. Dashboard Details page</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="known-issues.html" class="xref page">SonataFlow Operator Known Issues, Limitations and Roadmap</a></p>
+</li>
+<li>
+<p><a href="developing-workflows.html" class="xref page">Developing Workflow with the Operator</a></p>
+</li>
+<li>
+<p><a href="configuring-workflows.html" class="xref page">Configuring Workflow Services</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
